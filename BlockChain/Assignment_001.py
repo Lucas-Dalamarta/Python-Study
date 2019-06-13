@@ -15,7 +15,7 @@ def new_age():
 
 
 # 3) Create a function which prints ANY data (two arguments) as one string
-def return_all(name,age):
+def return_all(name,age):   
     """Prints Name and Age.\n
         Returns : Null"""
     print('Your name: \t '+name+'\nYour Age : \t '+str(age))
@@ -26,6 +26,7 @@ def calc_decade(years):
     """A divison of Years // 10 , to determine how many decades passed.\n
         Returns : Int"""
     return  years//10
+
 
 def print_space():
     """Adds a line of  '-'  in the screen.\n
