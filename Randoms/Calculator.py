@@ -29,7 +29,40 @@ def _Line(v_char):
     return print(c)
 
 
+def _Get_A():
+    """Returns A value , but only if it's a valid integer"""
+    a_value = 0
+
+    while True:
+        try:
+            a_value = int(input("Enter a value for A :\t"))
+            if a_value <= 0 :
+                raise ValueError
+        except  ValueError:
+            print("Incorrect value , try again !")
+            continue
+        break    
+    return a_value
+
+
+def _Get_B():
+    """Returns B value , but only if it's a valid integer"""
+    b_value = 0
+
+    while True:
+        try:
+            b_value = int(input("Enter a value for B :\t"))
+            if b_value <= 0 :
+                raise ValueError
+        except  ValueError:
+            print("Incorrect value , try again !")
+            continue
+        break
+    return b_value
+
+
 def menu():
+    """Displays options to use calculator"""
     _Line("=")
     print("\tEnter [1] to   Sum ")
     print("\tEnter [2] to   Sub ")
@@ -37,41 +70,43 @@ def menu():
     print("\tEnter [4] to   Mul ")
     _Line("=")
 
-#-------------------------------------
+
 def main():
     """Old habits ..."""
-    while True:
-        choice = 0
-
-        a = int(input("Enter a number :\t"))
-        b = int(input("Enter another number :\t"))
-
-        menu()
-
-        choice = int(input("Option :\t"))
+while True:
+    choice = 0
         
-        _Line("*")
+    a = _Get_A() 
+    b = _Get_B()
 
-        if choice   == 1:
-            _sum(a,b)
-        elif choice == 2:
-            _sub(a,b)
-        elif choice == 3:
-            _div(a,b)
-        elif choice == 4:
-            _mul(a,b)
-        
-        _Line("*")
-        choice = int(input("Do you want to go again ? [0/1] \t"))
-        _Line("*")
-        
-        if choice != 1:
-            break
-        else:
-            pass
-#-------------------------------
+    menu()
+
+    choice = int(input("Option :\t"))
+    
+    _Line("*")
+
+    if choice   == 1:
+        _sum(a,b)
+    elif choice == 2:
+        _sub(a,b)
+    elif choice == 3:
+        _div(a,b)
+    elif choice == 4:
+        _mul(a,b)
+    
+    _Line("*")
+    choice = int(input("Do you want to go again ? [0/1] \t"))
+    _Line("*")
+    
+    if choice == 1:
+        continue
+    else:
+        break
+
+
+#-------------------------------    EXEC    --------------------
 _Line(":")
 main()
-#-------------------------------
 print("\tApplication Ended !")
 _Line(":")
+#---------------------------------------------------------------
