@@ -42,6 +42,6 @@ age = new_age()
 print_space()
 
 return_all(name,age)
-print('Decades  : \t',calc_decade(int(age)))
+print('Decades  : \t',calc_decade(age))
 
 print_space()
