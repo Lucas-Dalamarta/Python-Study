@@ -1,18 +1,14 @@
-# -*- coding: utf-8 -*-
-#   Used to solve : 
-#       SyntaxError: Non-ASCII character '\xc3'
-
 #   First BlockChains
-#   Primeiras Blockchains
 
 blockchain1  =    [[1]]
 blockchain2  =    [[1]]
 
-#   This Function receives the argument X , which is a Integer
-#   A função recebe o argumento X , que é Integer
+def _lastValue():
+    return  blockchain1[-1]
 
 def add_new_value(x):
-    blockchain1.append([blockchain1[-1],x])
+    """Receives and appens a new value to the BlockChain"""
+    blockchain1.append([_lastValue(),x])
     print(blockchain1)
 
 
