@@ -1,21 +1,17 @@
-class Movie:
+class Character:
 
-    def __init__(self,name,release,duration):
-        self.name     =   name
-        self.release  =   release
-        self.duration =   duration
+    def __init__(self,nome,idade,jedi):
+        self.nome       =   nome
+        self.idade      =   idade
+        self.e_jedi     =   jedi
 
+    def isJedi(self):
+        return self.e_jedi
 
-class   Series:
+luke = Character("Luke Skywalker",21,True)
 
-    def __init__(self,name,release,seasons):
-        self.name     =   name
-        self.release  =   release
-        self.seasons  =   seasons
-
-
-
-naruto = Movie("naruto Road to Boruto",2018,120)
-
-print(naruto.name)
-
+print(luke.nome+' is '+str(luke.idade)+' years old')
+if luke.isJedi()    :
+    print(luke.nome+' is a Jedi')
+else    :
+    print(luke.nome+' is not a Jedi')
